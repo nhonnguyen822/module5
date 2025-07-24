@@ -11,7 +11,6 @@ class SearchComponent extends Component {
 
 
     handleSearch = (event) => {
-
         const searchName = event.target.value;
         {console.log(searchName)}
         this.props.handleSearch(searchName)
