@@ -75,7 +75,7 @@ export const deleteById = (id) => {
 
 export const searchByName = (searchName) => {
     let student = students.filter(s => s.name?.toLowerCase().includes(searchName.toLowerCase().trim()))
-    return [...student]
+
 }
 
 

@@ -1,22 +1,21 @@
-import "bootstrap/dist/css/bootstrap.min.css"
 import {Button, Modal} from "react-bootstrap";
-import {deleteById, getAll} from "../service/student";
+import {deleteById} from "../service/student";
+import {toast} from "react-toastify";
 
-const DeleteComponent = ({handleCloseModal, isShowModal, deleteStudent}) => {
+const DeleteComponent = ({deleteStudent, isShowModal, handleCloseModal}) => {
 
     const handleDelete = () => {
-        const studentIdDelete = deleteStudent.id;
-        deleteById(studentIdDelete);
-        console.log(getAll())
-        handleCloseModal();
-    }
-
+        let studentList=deleteById(deleteStudent.id);
+        console.log(studentList)
+        handleCloseModal(pre =>!pre);
+        toast.success("xoá thành công")
+    };
     return <>
         <Modal show={isShowModal} onHide={handleCloseModal}>
             <Modal.Header closeButton>
                 <Modal.Title>Modal heading</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Bạn có muốn xoá sinh viên không ?</Modal.Body>
+            <Modal.Body>Bạn có muốn xoá sinh viên {deleteStudent.name} không ?</Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleCloseModal}>
                     Close
@@ -28,5 +27,4 @@ const DeleteComponent = ({handleCloseModal, isShowModal, deleteStudent}) => {
         </Modal>
     </>
 }
-
 export default DeleteComponent;
