@@ -1,30 +1,35 @@
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import {useEffect, useState} from "react";
 import {findAll} from "../service/class";
-import {findById, save} from "../service/student";
+import {findById, save, update} from "../service/student";
 import {toast} from "react-toastify";
 import * as yup from "yup";
 import {useNavigate, useParams} from "react-router-dom";
 
 const UpdateComponent = () => {
-    const studentUpdateId = useParams();
+    const {id} = useParams();
 
     const [student, setStudent] = useState(null);
     const [classList, setClasList] = useState([]);
     useEffect(() => {
         setClasList([...findAll()])
-        setStudent(findById(studentUpdateId))
+        const studentUpdate = findById(+id);
+        setStudent(s => ({
+            ...studentUpdate,
+            classCG: JSON.stringify(studentUpdate.class)
+        }))
     }, []);
 
 
     const navigate = useNavigate();
 
     const handleSubmit = (value) => {
+
         value = {
             ...value,
             classCG: JSON.parse(value.classCG)
         }
-        save(value)
+        update(value)
         toast.success("update thành công")
         navigate("/list")
     }
@@ -67,11 +72,11 @@ const UpdateComponent = () => {
                         <label>Class</label>
                         <Field name={'classCG'} as={'select'}>
                             {classList.map(cls =>
-                                <option value={JSON.stringify(cls)}>{cls.name}</option>
+                                <option key={cls.id} value={JSON.stringify(cls)}>{cls.name}</option>
                             )}
                         </Field>
                     </div>
-                    <button type="submit">save</button>
+                    <button type="submit">Update</button>
                 </Form>
             </Formik>
         }

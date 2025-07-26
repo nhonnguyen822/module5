@@ -6,6 +6,7 @@ import ListComponent from "./component/ListComponent";
 import DetailComponent from "./component/DetailComponent";
 import AddComponent from "./component/AddComponent"
 import {ToastContainer} from "react-toastify";
+import UpdateComponent from "./component/UpdateComponent";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path={"/list"} element={<ListComponent/>}/>
             <Route path={"/add"} element={<AddComponent/>}/>
             <Route path={"/detail/:id"} element={<DetailComponent/>}/>
+            <Route path={"/update/:id"} element={<UpdateComponent/>}/>
         </Routes>
         <ToastContainer/>
     </>

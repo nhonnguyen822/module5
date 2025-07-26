@@ -6,7 +6,8 @@ const DetailComponent = () => {
     const {id} = useParams();
     const [student, setStudent] = useState({})
     useEffect(() => {
-        const studentDetail = findById(id)
+        const studentDetail = findById(+id)
+        {console.log(studentDetail)}
         setStudent(studentDetail)
     }, []);
     return <>

@@ -88,6 +88,13 @@ export const getAll = () => {
 export const save = (student) => {
     students.push(student)
 }
+export const update = (student) => {
+    const index = students.findIndex(s => s.id === student.id)
+    if (index !== -1) {
+        students[index] = student;
+    }
+    return students;
+}
 
 export const deleteById = (id) => {
     return students = students.filter((s) => {
@@ -98,5 +105,5 @@ export const deleteById = (id) => {
 }
 
 export const findById = (id) => {
-    return students.find(s => s.id = id);
+    return students.find(s => s.id === id);
 }

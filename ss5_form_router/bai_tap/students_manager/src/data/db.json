@@ -1,0 +1,45 @@
+{
+  "students": [
+    {
+      "name": "Nguyen Thanh Nhon",
+      "age": 18,
+      "subject": [
+        "JS",
+        "HTML"
+      ],
+      "classes": {
+        "id": 2,
+        "name": "C03"
+      },
+      "id": 1
+    },
+    {
+      "name": "Nguyễn Thị Nhi",
+      "age": 20,
+      "subject": [
+        "JS",
+        "HTML",
+        "CSS"
+      ],
+      "classes": {
+        "id": 3,
+        "name": "C05"
+      },
+      "id": 2
+    }
+  ],
+  "class": [
+    {
+      "id": 1,
+      "name": "C02"
+    },
+    {
+      "id": 2,
+      "name": "C03"
+    },
+    {
+      "id": 3,
+      "name": "C05"
+    }
+  ]
+}

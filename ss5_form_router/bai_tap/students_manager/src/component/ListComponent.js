@@ -47,10 +47,11 @@ const ListComponent = () => {
                         <td>{s.name}</td>
                         <td>{s.age}</td>
                         <td>{s.gender}</td>
-                        <td>{s.subject}</td>
+                        <td>{s.subject.join(" , ")}</td>
                         <td>{s.classCG?.name}</td>
                         <td>
                             <button onClick={() => handleOpenModal(s)}>Delete</button>
+                            <Link to={`/update/${s.id}`}>Update</Link>
                             <Link to={`/detail/${s.id}`}>Detail</Link>
                         </td>
                     </tr>
