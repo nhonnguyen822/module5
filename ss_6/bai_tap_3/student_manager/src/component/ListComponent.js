@@ -1,30 +1,39 @@
 import {useEffect, useRef, useState} from "react";
-import {findById, getAllStudent, searchByName} from "../service/student";
+import {findById, searchByName} from "../service/student";
 import {Link} from "react-router-dom";
 import DeleteComponent from "./DeleteComponent";
+import {getAllClass} from "../service/classes";
 
 const ListComponent = () => {
     const searchRef = useRef();
+    const classRef = useRef();
     const [studentList, setStudentList] = useState([]);
+    const [classList, setClassList] = useState([]);
     const [isShowModal, setIsShowModal] = useState(false);
     const [studentDelete, setStudentDelete] = useState({})
+    const [page, setPage] = useState(1)
+    const [totalPage, setTotalPage] = useState(1)
+    const [searchName, setSearchName] = useState("");
     useEffect(() => {
             const fetchData = async () => {
-                const result = await getAllStudent();
-                setStudentList(result);
+                const res = await searchByName(searchName, page);
+                setStudentList(res.data);
+                setTotalPage(Math.ceil(res.totalCount / 1))
             }
             fetchData();
-        }, [ isShowModal]
+        }, [isShowModal, page, searchName]
     )
+    useEffect(() => {
+        const fetClass = async () => {
+            const res = await getAllClass()
+            setClassList(res)
+        }
+        fetClass();
+    }, []);
 
     const handleSearch = () => {
         let searchName = searchRef.current.value;
-        const fetchData = async () => {
-            const data = await searchByName(searchName);
-            console.log(data)
-            setStudentList(data);
-        }
-        fetchData();
+        setSearchName(searchName)
     }
 
     const handleOpenModal = (s) => {
@@ -41,7 +50,13 @@ const ListComponent = () => {
     return <>
         <div>
             <h2> Quản Lý Sinh Viên</h2>
-            <input ref={searchRef}/>
+            <input ref={searchRef} placeholder={" enter student name"}/>
+            <select rel={classRef}>
+                <option value={""}> ...Select Class ...</option>
+                {classList && classList.map(cls => (
+                    <option value={cls.id}> {cls.name}</option>
+                ))}
+            </select>
             <button onClick={handleSearch}>Search</button>
         </div>
         <div>
@@ -75,11 +90,17 @@ const ListComponent = () => {
                     </tr>
                 ))}
                 </tbody>
+
             </table>
+            <div>
+                <button disabled={page === 1} onClick={() => setPage(page - 1)}>Trang trước</button>
+                <span>Trang {page} / {totalPage}</span>
+                <button disabled={page === totalPage} onClick={() => setPage(page + 1)}>Trang sau</button>
+            </div>
             <DeleteComponent handleCloseModal={handleCloseModal}
                              isShowModal={isShowModal}
                              deleteStudent={studentDelete}/>
         </div>
     </>
 }
-export default ListComponent ;
+export default ListComponent;

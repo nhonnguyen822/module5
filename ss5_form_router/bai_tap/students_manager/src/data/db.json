@@ -26,6 +26,19 @@
         "name": "C05"
       },
       "id": 2
+    },
+    {
+      "name": "Huỳnh Minh",
+      "age": 18,
+      "subject": [
+        "HTML",
+        "JS"
+      ],
+      "classes": {
+        "id": 2,
+        "name": "C03"
+      },
+      "id": 3
     }
   ],
   "class": [

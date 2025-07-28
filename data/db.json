@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "name": "Sam Sung",
+      "price": 2525858,
+      "manufactureId": "1",
+      "id": 1
+    },
+    {
+      "name": "Sam Sung",
+      "price": 2525858,
+      "manufactureId": "2",
+      "id": 2
+    },
+    {
+      "name": "Be Live",
+      "price": 25258585522,
+      "manufactureId": "2",
+      "id": 3,
+      "manufacture": {
+        "id": 2,
+        "name": "SamSung"
+      }
+    }
+  ],
+  "manufactures": [
+    {
+      "id": 1,
+      "name": "Nokia"
+    },
+    {
+      "id": 2,
+      "name": "SamSung"
+    }
+  ]
+}

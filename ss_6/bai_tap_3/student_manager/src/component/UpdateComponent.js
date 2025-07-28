@@ -21,12 +21,12 @@ const UpdateComponent = () => {
             student = {
                 ...student,
                 classes: JSON.stringify(student.classes)
+
             }
             setStudentUpdate(student)
         };
         fetchData();
     }, []);
-
 
     const handleValidate = yup.object({
         name: yup
