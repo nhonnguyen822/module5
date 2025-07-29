@@ -1,0 +1,65 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Nguyen Thành Nhơn",
+      "age": 18,
+      "subject": [
+        "HTML",
+        "CSS",
+        "JS"
+      ],
+      "classId": 1
+    },
+    {
+      "id": 2,
+      "name": "Nguyen Van B",
+      "age": 18,
+      "subject": [
+        "HTML",
+        "CSS",
+        "JS"
+      ],
+      "classId": 2
+    },
+    {
+      "id": 3,
+      "name": "Nguyen Van Nhan",
+      "age": 18,
+      "subject": [
+        "HTML",
+        "CSS"
+      ],
+      "classId": "1",
+      "class": {
+        "id": 3,
+        "name": "C05"
+      }
+    },
+    {
+      "name": "Nguyen Van D",
+      "age": 18,
+      "subject": [
+        "HTML",
+        "CSS",
+        "JS"
+      ],
+      "classId": 1,
+      "id": 4
+    }
+  ],
+  "classes": [
+    {
+      "id": 1,
+      "name": "C02"
+    },
+    {
+      "id": 2,
+      "name": "C03"
+    },
+    {
+      "id": 3,
+      "name": "C05"
+    }
+  ]
+}
