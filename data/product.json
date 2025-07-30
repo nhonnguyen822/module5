@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Nokia",
+      "price": "100000",
+      "dateOfManufacture": "12/12/2001",
+      "manufacture": {
+        "id": 1,
+        "name": "Nokia"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Samsung",
+      "price": "100000",
+      "dateOfManufacture": "12/12/2001",
+      "manufacture": {
+        "id": 2,
+        "name": "Samsung"
+      }
+    },
+    {
+      "name": "Sam Sung 2151",
+      "price": "2525858",
+      "dateOfManufacture": "2025-07-01",
+      "manufacture": {
+        "id": 1,
+        "name": "Nokia"
+      },
+      "id": 3
+    }
+  ],
+  "manufactures": [
+    {
+      "id": 1,
+      "name": "Nokia"
+    },
+    {
+      "id": 2,
+      "name": "Samsung"
+    }
+  ]
+}

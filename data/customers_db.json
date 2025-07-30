@@ -1,0 +1,62 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Nguyễn Văn A",
+      "age": "18",
+      "email": "ts@gmail.com",
+      "birthDay": "12/12/2001",
+      "typeCustomer": {
+        "id": 1,
+        "name": "KIM CUONG"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Văn B",
+      "age": "18",
+      "email": "ts@gmail.com",
+      "birthDay": "12/12/2001",
+      "typeCustomer": {
+        "id": 2,
+        "name": "VÀNG"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Nguyễn Văn C",
+      "age": "18",
+      "email": "ts@gmail.com",
+      "birthDay": "12/12/2001",
+      "typeCustomer": {
+        "id": 3,
+        "name": "BẠC"
+      }
+    },
+    {
+      "name": "Nguyễn Thành Nhơn",
+      "age": "19",
+      "email": "nhon@gmail.com",
+      "birthDay": "2025-07-24",
+      "typeCustomer": {
+        "id": 1,
+        "name": "KIM CUONG"
+      },
+      "id": 4
+    }
+  ],
+  "typeCustomer": [
+    {
+      "id": 1,
+      "name": "KIM CUONG"
+    },
+    {
+      "id": 2,
+      "name": "VÀNG"
+    },
+    {
+      "id": 3,
+      "name": "BẠC"
+    }
+  ]
+}
